@@ -1,4 +1,4 @@
-package Olimp.config;
+package com.sbk.olimp.config;
 
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

@@ -7,7 +7,7 @@
     <jawr:script src="/script/all.js"/>
     <title>Olimp</title>
 </head>
-<body ng-app="httpExample">
+<body ng-app="generalModule">
     <div ng-view=""></div>
 </body>
 </html>

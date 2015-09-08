@@ -1,4 +1,4 @@
-package Olimp.controller.config;
+package com.sbk.olimp.controller.config;
 
 import net.jawr.web.servlet.JawrSpringController;
 import org.springframework.beans.factory.annotation.Autowired;

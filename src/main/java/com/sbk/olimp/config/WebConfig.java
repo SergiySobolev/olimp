@@ -1,4 +1,4 @@
-package Olimp.config;
+package com.sbk.olimp.config;
 
 import net.jawr.web.servlet.JawrSpringController;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +14,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"Olimp"})
+@ComponentScan({"com.sbk.olimp"})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
