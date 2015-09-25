@@ -1,7 +1,8 @@
 "use strict";
     var generalModule = angular.module('generalModule', [
                                                         "ngRoute",
-                                                        "primeNumberModule"
+                                                        "primeNumberModule",
+                                                        "fuzzyStringSearchModule"
                                                         ]);
 
     generalModule.config(["$routeProvider", function($routeProvider) {
@@ -16,8 +17,8 @@
                 controller: "MainCtrl",
                 controllerAs: "controller"
             })
-            .when("/levenshteindistance", {
-                templateUrl: "views/levenshteindistance.jsp",
+            .when("/fuzzystringsearch", {
+                templateUrl: "views/fuzzystringsearch.jsp",
                 controller: "MainCtrl",
                 controllerAs: "controller"
             })
