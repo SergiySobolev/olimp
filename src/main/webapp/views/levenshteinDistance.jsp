@@ -1,5 +1,5 @@
 <div ng-app="fuzzyStringSearchModule" class="container">
-    <h1>Fuzzy String Search</h1>
+    <h1>Levenshtein Distance Calculation</h1>
 
     <form role="form" class="form-horizontal" ng-controller="FuzzyStringSearchController">
         <div class="form-group">

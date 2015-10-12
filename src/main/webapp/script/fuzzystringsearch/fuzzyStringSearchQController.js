@@ -11,6 +11,5 @@
 
         $scope.findDistance = function(){
             return FuzzyStringSearchFactory.findDistance($scope.s1, $scope.s2);
-
         }
     }

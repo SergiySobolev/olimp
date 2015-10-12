@@ -17,8 +17,13 @@
                 controller: "MainCtrl",
                 controllerAs: "controller"
             })
-            .when("/fuzzystringsearch", {
-                templateUrl: "views/fuzzystringsearch.jsp",
+            .when("/levenshteinDistance", {
+                templateUrl: "views/levenshteinDistance.jsp",
+                controller: "MainCtrl",
+                controllerAs: "controller"
+            })
+            .when("/needlemanWunsch", {
+                templateUrl: "views/needlemanWunsch.jsp",
                 controller: "MainCtrl",
                 controllerAs: "controller"
             })

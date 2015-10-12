@@ -7,10 +7,10 @@ var fuzzyStringSearchFactory
 
 function FuzzyStringSearchFactory(){
     var findDistance = function (s1, s2) {
-        return findDistanceLevenshtein(s1, s1.length, s2, s2.length);
+        return findDistanceLevenshteinRecursive(s1, s1.length, s2, s2.length);
     };
 
-    var findDistanceLevenshtein = function (s1,l1, s2,l2) {
+    var findDistanceLevenshteinRecursive = function (s1,l1, s2,l2) {
         if(l1 == 0){
             return l2;
         }
@@ -19,9 +19,9 @@ function FuzzyStringSearchFactory(){
         }
         var cost = (s1[l1-1] == s2[l2-1]) ? 0 : 1;
 
-        var d1 = findDistanceLevenshtein(s1, l1-1, s2, l2)+1;
-        var d2 = findDistanceLevenshtein(s1, l1, s2, l2-1)+1;
-        var d3 = findDistanceLevenshtein(s1, l1-1, s2, l2-1)+cost;
+        var d1 = findDistanceLevenshteinRecursive(s1, l1-1, s2, l2)+1;
+        var d2 = findDistanceLevenshteinRecursive(s1, l1, s2, l2-1)+1;
+        var d3 = findDistanceLevenshteinRecursive(s1, l1-1, s2, l2-1)+cost;
 
         return min3(d1, d2, d3);
     };
