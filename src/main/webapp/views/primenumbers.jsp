@@ -9,7 +9,7 @@
         There are <b>{{primeNumbersInRange.length}}</b> prime numbers in range.<br>
         <div class="form-group">
             <label for="primenumbers">They Are:</label>
-            <textarea class="form-control col-xs-12" rows="2" id="primenumbers">
+            <textarea class="form-control col-xs-12" rows="5" id="primenumbers">
                 {{primeNumbersInRange}}
             </textarea>
         </div>

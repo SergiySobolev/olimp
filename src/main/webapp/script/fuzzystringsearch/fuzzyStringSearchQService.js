@@ -5,9 +5,20 @@ var fuzzyStringSearchModule = angular.module("fuzzyStringSearchModule");
 var fuzzyStringSearchFactory
     = fuzzyStringSearchModule.factory("FuzzyStringSearchFactory", FuzzyStringSearchFactory);
 
-function FuzzyStringSearchFactory(){
+function FuzzyStringSearchFactory($http){
     var findDistance = function (s1, s2) {
         return findDistanceLevenshteinRecursive(s1, s1.length, s2, s2.length);
+    };
+
+    var getDictionary = function(){
+        $http({
+            method: 'GET',
+            url: '/rest/'
+        }).success(function(data){
+            alert(data);
+        }).error(function(){
+            alert("error");
+        });
     };
 
     var findDistanceLevenshteinRecursive = function (s1,l1, s2,l2) {
@@ -35,7 +46,8 @@ function FuzzyStringSearchFactory(){
     };
 
     return {
-        findDistance : findDistance
+        findDistance : findDistance,
+        getDictionary : getDictionary
     }
 }
 

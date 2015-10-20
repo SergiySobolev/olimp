@@ -2,36 +2,72 @@
     var generalModule = angular.module('generalModule', [
                                                         "ngRoute",
                                                         "primeNumberModule",
-                                                        "fuzzyStringSearchModule"
+                                                        "fuzzyStringSearchModule",
+                                                        "ngAnimate",
+                                                        "ui.router"
                                                         ]);
 
-    generalModule.config(["$routeProvider", function($routeProvider) {
+    generalModule.config(["$routeProvider", "$stateProvider", function($routeProvider, $stateProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "views/main.jsp",
-                controller: "MainCtrl",
-                controllerAs: "controller"
+                templateUrl: "views/main.jsp"
             })
             .when("/primenumbers", {
-                templateUrl: "views/primenumbers.jsp",
-                controller: "MainCtrl",
-                controllerAs: "controller"
+                templateUrl: "views/primenumbers.jsp"
             })
             .when("/levenshteinDistance", {
-                templateUrl: "views/levenshteinDistance.jsp",
-                controller: "MainCtrl",
-                controllerAs: "controller"
+                templateUrl: "views/levenshteinDistance.jsp"
             })
             .when("/needlemanWunsch", {
-                templateUrl: "views/needlemanWunsch.jsp",
-                controller: "MainCtrl",
-                controllerAs: "controller"
+                templateUrl: "views/needlemanWunsch.jsp"
             })
+            .when("/less", {
+                templateUrl: "views/lessExample.jsp"
+            })
+
     }]);
 
-    var generalController = generalModule.controller("MainCtrl", MainController);
+    generalModule.config( function estateConfig ( $stateProvider) {
+        $stateProvider
+            .state( 'login', {
+                url: '/',
+                views: {
+                    "master": {
+                        controller: 'LoginCtrl',
+                        templateUrl: 'views/animExample/_login.html'
+                    }
+                }
+            })
+            .state( 'dashboard', {
+                url: '/dashboard',
+                views: {
+                    "master": {
+                        templateUrl: 'views/animExample/_dashboard.html'
+                    },
+                    "content@dashboard": {
+                        templateUrl: 'views/animExample/_contentHome.html'
+                    },
+                    "navbar@dashboard": {
+                        templateUrl: 'views/animExample/_navbar.html'
+                    }
+                }
+            })
+            .state( 'dashboard.frodo', {
+                url: '/dashboard/frodo',
+                views: {
+                    "content@dashboard": {
+                        templateUrl: 'views/animExample/_contentFrodo.html'
+                    }
+                }
+            })
+            .state( 'dashboard.sam', {
+                url: '/dashboard/sam',
+                views: {
+                    "content@dashboard": {
+                        templateUrl: 'views/animExample/_contentSam.html'
+                    }
+                }
+            })
+    })
 
-    function MainController(){
-
-    }
 
