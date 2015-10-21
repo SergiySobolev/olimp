@@ -11,8 +11,8 @@ function navigationMenu(){
             var slideSubmenuElem = elem.find('#slide-submenu');
             var miniSubMenuElem = elem.find('.mini-submenu');
             slideSubmenuElem.click(function () {
-                slideSubmenuElem.closest('.list-group').fadeOut('slide', function () {
-                    miniSubMenuElem.fadeIn();
+                slideSubmenuElem.closest('.list-group').toggle('slide', function(){
+                    miniSubMenuElem.fadeToggle();
                 });
             });
             miniSubMenuElem.click(function () {

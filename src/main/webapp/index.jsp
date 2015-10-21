@@ -7,8 +7,9 @@
     <link href="<c:url value="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>" rel="stylesheet">
     <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/css/angular.rangeSlider.css"/>" rel="stylesheet">
-    <link href="<c:url value="/css/animate.less"/>" rel="stylesheet">
-    <link href="<c:url value="/css/navbar.less"/>" rel="stylesheet">
+    <link href="<c:url value="/css/animate.less"/>" rel="stylesheet/less">
+    <link href="<c:url value="/css/common.less"/>" rel="stylesheet/less">
+    <link href="<c:url value="/css/navbar.less"/>" rel="stylesheet/less">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular-route.js"></script>
@@ -16,6 +17,13 @@
     <title>Olimp</title>
 </head>
 <body ng-app="generalModule">
-    <div ng-view=""></div>
+<div>
+    <div class="displayInlineBlock">
+        <navigation-menu></navigation-menu>
+    </div>
+    <div class="dashboard">
+        <div class="fadeInUpBig animated" ui-view></div>
+    </div>
+</div>
 </body>
 </html>
