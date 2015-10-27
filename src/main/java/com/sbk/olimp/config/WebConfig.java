@@ -1,15 +1,15 @@
 package com.sbk.olimp.config;
 
+import com.google.gson.Gson;
 import net.jawr.web.servlet.JawrSpringController;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
+import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_PROTOTYPE;
 
 
 @Configuration
@@ -41,6 +41,12 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         JawrSpringController controller = new JawrSpringController();
         controller.setConfigLocation("/jawr.properties");
         return controller;
+    }
+
+    @Bean
+    @Scope(SCOPE_PROTOTYPE)
+    public Gson getGson(){
+        return new Gson();
     }
 
 }

@@ -10,6 +10,6 @@ public class BaseController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index(){
-        return new ModelAndView("index2");
+        return new ModelAndView("index");
     }
 }

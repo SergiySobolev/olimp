@@ -1,9 +1,12 @@
 package com.sbk.olimp.config;
 
+import com.google.gson.Gson;
 import org.hibernate.ejb.HibernatePersistence;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
@@ -16,6 +19,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.Properties;
+
+import static org.springframework.beans.factory.config.BeanDefinition.*;
 
 @Configuration
 @EnableTransactionManagement

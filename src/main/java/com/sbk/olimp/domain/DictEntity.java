@@ -3,6 +3,7 @@ package com.sbk.olimp.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity(name = "dict")
 public class DictEntity extends BaseEntity {
