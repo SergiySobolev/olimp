@@ -15,6 +15,6 @@
         };
 
         $scope.getDictionary = function(){
-            return FuzzyStringSearchFactory.getDictionary();
+            return FuzzyStringSearchFactory.getDictionary($scope.s);
         };
     }

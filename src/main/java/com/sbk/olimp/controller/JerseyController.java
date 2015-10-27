@@ -1,24 +1,25 @@
 package com.sbk.olimp.controller;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import com.sbk.olimp.domain.DictEntity;
+import com.sbk.olimp.repo.DictRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Path("/")
+@Component
 public class JerseyController {
 
-    @GET
-    @Path("/{param}")
-    public Response getMsg(@PathParam("param") String msg) {
-        String output = "Jersey say : " + msg;
-        return Response.status(200).entity(output).build();
-
-    }
+    @Autowired
+    DictRepository dictRepository;
 
     @GET
-    @Path("/")
-    public Response getMsg() {
-        return Response.status(200).entity("ololo").build();
+    public Response getMsg(@QueryParam("str") String str) {
+        List<DictEntity> dicts = dictRepository.findAll();
+        return Response.status(200).entity("").build();
     }
 }

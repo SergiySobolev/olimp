@@ -32,7 +32,6 @@ public class DictRepoTest {
 
     @Before
     public void setUp() {
-        //db = new EmbeddedDatabaseBuilder().addDefaultScripts().build();
         db = new EmbeddedDatabaseBuilder()
                 .setType(EmbeddedDatabaseType.H2)
                 .addScript("db/sql/ddl.sql")
@@ -45,6 +44,7 @@ public class DictRepoTest {
         DictEntity dict = dictRepository.findOne(1L);
         assertThat(dict.getId(), equalTo(1L));
         assertThat(dict.getItem(), equalTo("mkyong"));
+        assertThat(dictRepository.findAll().size(), equalTo(5));
     }
 
     @After

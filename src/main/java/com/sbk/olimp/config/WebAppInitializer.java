@@ -1,6 +1,7 @@
 package com.sbk.olimp.config;
 
 import com.sun.jersey.spi.container.servlet.ServletContainer;
+import com.sun.jersey.spi.spring.container.servlet.SpringServlet;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -35,7 +36,8 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
     public void onStartup(ServletContext servletContext) throws ServletException {
         super.onStartup(servletContext);
         ServletRegistration.Dynamic servlet
-                = servletContext.addServlet("jersey-serlvet", new ServletContainer());
+                = servletContext.addServlet("jersey-serlvet", new SpringServlet());
+        servlet.setInitParameter("com.sun.jersey.config.property.packages", "com.sbk.olimp.controller");
         servlet.addMapping("/rest/*");
         servlet.setLoadOnStartup(1);
     }

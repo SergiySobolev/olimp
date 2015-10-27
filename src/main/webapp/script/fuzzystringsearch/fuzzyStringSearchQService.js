@@ -10,10 +10,11 @@ function FuzzyStringSearchFactory($http){
         return findDistanceLevenshteinRecursive(s1, s1.length, s2, s2.length);
     };
 
-    var getDictionary = function(){
+    var getDictionary = function(str){
         $http({
             method: 'GET',
-            url: '/rest/'
+            url: '/rest/',
+            params:{str:str}
         }).success(function(data){
             alert(data);
         }).error(function(){
