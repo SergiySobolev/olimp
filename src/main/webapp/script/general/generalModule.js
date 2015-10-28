@@ -3,7 +3,10 @@
                                                         "primeNumberModule",
                                                         "fuzzyStringSearchModule",
                                                         "ngAnimate",
-                                                        "ui.router"
+                                                        "ui.router",
+                                                        "mgcrea.ngStrap",
+                                                        "ui.select",
+                                                        "ngSanitize"
                                                         ]);
 
 

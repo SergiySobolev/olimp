@@ -16,9 +16,9 @@ function FuzzyStringSearchFactory($http){
             url: '/rest/',
             params:{str:str}
         }).success(function(data){
-            alert(data);
+
         }).error(function(){
-            alert("error");
+
         });
     };
 
