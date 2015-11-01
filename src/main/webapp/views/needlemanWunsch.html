@@ -1,13 +1,9 @@
 <div ng-app="fuzzyStringSearchModule" class="container">
     <form role="form" class="" ng-controller="FuzzyStringSearchController">
         <div class="">
-            <!--<label for="state" class="col-sm-2 control-label">Input String:</label>-->
             <div class="">
-                <!--<input  type="text" ng-model="s" id="state"-->
-                       <!--class="form-control" ng-options="state for state in states"-->
-                       <!--ng-change="getDictionary()"/>-->
+                <drop-down-input label="ddLabel" element="s" data="countries"></drop-down-input>
 
-                <h3>Selectize theme</h3>
                 <p>Selected: {{country.selected}}</p>
                 <ui-select ng-model="country.selected" theme="selectize" ng-disabled="disabled" style="width: 300px;">
                     <ui-select-match placeholder="Select or search a country in the list...">{{$select.selected.name}}</ui-select-match>

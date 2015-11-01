@@ -8,7 +8,8 @@
     <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/css/angular.rangeSlider.css"/>" rel="stylesheet">
     <link href="<c:url value="/css/select.css"/>" rel="stylesheet">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+    <link href="<c:url value="/css/dropdowninput.css"/>" rel="stylesheet">
+    <link href="<c:url value="/css/selectize.default.css"/>" rel="stylesheet" >
     <link href="<c:url value="/css/animate.less"/>" rel="stylesheet/less">
     <link href="<c:url value="/css/common.less"/>" rel="stylesheet/less">
     <link href="<c:url value="/css/navbar.less"/>" rel="stylesheet/less">

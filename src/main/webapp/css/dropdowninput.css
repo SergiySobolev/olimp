@@ -1,0 +1,80 @@
+.drop-down-pane-container {
+    width: 300px;
+}
+
+.drop-down-input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 100%;
+    padding: 8px 8px;
+    overflow: hidden;
+    border: 1px solid #d0d0d0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    background-image: -moz-linear-gradient(top, #fefefe, #f2f2f2);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fefefe), to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top, #fefefe, #f2f2f2);
+    background-image: -o-linear-gradient(top, #fefefe, #f2f2f2);
+    background-image: linear-gradient(to bottom, #fefefe, #f2f2f2);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffefefe', endColorstr='#fff2f2f2', GradientType=0);
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+.drop-down-input:after {
+    width: 0;
+    height: 0;
+    border-top: 5px solid darkslategray;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.drop-down-input > input {
+    max-width: 100% !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 1px !important;
+    line-height: inherit !important;
+    text-indent: 0 !important;
+    background: none !important;
+    border: 0 none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-user-select: auto !important;
+    width : 100%;
+}
+
+.drop-down-input > input:focus {
+    outline: none !important;
+}
+
+.drop-down-input::after {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    display: block;
+    clear: left;
+    content: ' ';
+}
+
+
+
+.drop-down-input.focus {
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.drop-down-pane {
+    z-index: 1000;
+    border: 1px solid black;
+    display: none;
+}
