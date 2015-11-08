@@ -1,0 +1,16 @@
+<div class="container">
+    <label for="inputElement">{{label}}</label>
+
+    <div class="drop-down-pane-container" ng-click="$dropdown.activate()" >
+        <div class="drop-down-input">
+            <input type="text" id="inputElement" ng-model="element"
+                   placeholder="Select or search a country in the list..."/>
+        </div>
+        <div class="drop-down-pane fadein fadeout" ng-show="$dropdown.isOpen()">
+            <div  ng-repeat="el in data" class="drop-down-pane-item">
+                <span class="drop-down-pane-item-inner">{{el.name}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>

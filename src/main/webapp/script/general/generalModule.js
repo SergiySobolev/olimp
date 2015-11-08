@@ -2,11 +2,10 @@
     var generalModule = angular.module('generalModule', [
                                                         "primeNumberModule",
                                                         "fuzzyStringSearchModule",
+                                                        "dropDownInputModule",
                                                         "ngAnimate",
                                                         "ui.router",
-                                                        "mgcrea.ngStrap",
-                                                        "ui.select",
-                                                        "ngSanitize"
+														"anim-in-out"
                                                         ]);
 
 
