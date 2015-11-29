@@ -23,7 +23,7 @@
         <navigation-menu></navigation-menu>
     </div>
     <div class="dashboard">
-        <div ui-view="" class="anim-in-out anim-slide-below-fade" data-anim-speed="500"/>
+        <div ui-view="" class="anim-in-out anim-slide-below-fade" data-anim-speed="500"></div>
     </div>
 </div>
 </body>

@@ -10,10 +10,13 @@ public class DictEntity extends BaseEntity {
 
     @Id
     @Column(name = "id")
-    Long id;
+    private Long id;
+
+    @Column(name="code")
+    private String code;
 
     @Column(name = "item")
-    String item;
+    private String item;
 
     public Long getId() {
         return id;
@@ -21,6 +24,14 @@ public class DictEntity extends BaseEntity {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getItem() {

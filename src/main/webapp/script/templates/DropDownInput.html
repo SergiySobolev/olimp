@@ -1,14 +1,16 @@
 <div class="container">
     <label for="inputElement">{{label}}</label>
 
-    <div class="drop-down-pane-container" ng-click="$dropdown.activate()" >
-        <div class="drop-down-input">
-            <input type="text" id="inputElement" ng-model="element"
+    <div class="drop-down-pane-container" >
+        <div class="drop-down-input" ng-click="$dropdown.activate()">
+            <input type="text" id="inputElement" ng-model="element" ng-change="$dropdown.updateItems(element)"
                    placeholder="Select or search a country in the list..."/>
         </div>
         <div class="drop-down-pane fadein fadeout" ng-show="$dropdown.isOpen()">
-            <div  ng-repeat="el in data" class="drop-down-pane-item">
-                <span class="drop-down-pane-item-inner">{{el.name}}</span>
+            <div  ng-repeat="el in $dropdown.dataForDD" class="drop-down-pane-item">
+                <div class="drop-down-pane-item-inner"  ng-click="$dropdown.selectItem($event)">
+                    {{el.name}}
+                </div>
             </div>
         </div>
     </div>

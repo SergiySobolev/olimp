@@ -1,10 +1,10 @@
-package repo;
+package com.sbk.olimp.repo;
 
+import com.sbk.BaseTest;
 import com.sbk.olimp.config.DataBaseConfig;
 import com.sbk.olimp.config.WebAppInitializer;
 import com.sbk.olimp.config.WebConfig;
 import com.sbk.olimp.domain.DictEntity;
-import com.sbk.olimp.repo.DictRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,24 +20,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@WebAppConfiguration
-@ContextConfiguration(classes = {WebAppInitializer.class, WebConfig.class, DataBaseConfig.class})
-public class DictRepoTest {
-
-    private EmbeddedDatabase db;
-
-    @Autowired
-    DictRepository dictRepository;
-
-    @Before
-    public void setUp() {
-        db = new EmbeddedDatabaseBuilder()
-                .setType(EmbeddedDatabaseType.H2)
-                .addScript("db/sql/ddl.sql")
-                .addScript("db/sql/dml.sql")
-                .build();
-    }
+public class DictRepoTest extends BaseTest {
 
     @Test
     public void testFindItem() {
@@ -45,11 +28,6 @@ public class DictRepoTest {
         assertThat(dict.getId(), equalTo(1L));
         assertThat(dict.getItem(), equalTo("mkyong"));
         assertThat(dictRepository.findAll().size(), equalTo(5));
-    }
-
-    @After
-    public void tearDown() {
-        db.shutdown();
     }
 
 }

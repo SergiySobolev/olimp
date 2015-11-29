@@ -18,7 +18,7 @@ function FuzzyStringSearchFactory($http){
         }).success(function(data){
             callback(data);
         }).error(function(){
-
+            console.log("Error during getting dictionary");
         });
     };
 
