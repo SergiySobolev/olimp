@@ -1,11 +1,13 @@
 package com.sbk.olimp.domain;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.Table;
 
-@Entity(name = "dict")
+@Entity
+@Table(name = "dict")
 public class DictEntity extends BaseEntity {
 
     @Id

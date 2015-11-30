@@ -65,7 +65,7 @@
         <!-- Hibernate -->
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
             <version>${hibernate.persistence.version}</version>
         </dependency>
 
@@ -198,6 +198,12 @@
             <groupId>io.reactivex</groupId>
             <artifactId>rxjava</artifactId>
             <version>1.0.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ToGoogle</groupId>
+            <artifactId>ToGoogle</artifactId>
+            <version>1.0</version>
         </dependency>
 
 

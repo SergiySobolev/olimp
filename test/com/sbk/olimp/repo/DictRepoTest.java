@@ -27,7 +27,12 @@ public class DictRepoTest extends BaseTest {
         DictEntity dict = dictRepository.findOne(1L);
         assertThat(dict.getId(), equalTo(1L));
         assertThat(dict.getItem(), equalTo("mkyong"));
-        assertThat(dictRepository.findAll().size(), equalTo(5));
+        assertThat(dictRepository.findAll().size(), equalTo(7));
+    }
+
+    @Test
+    public void testGetItemNameMaxLength() {
+        assertThat(dictRepository.getItemNameMaxLen(), equalTo(7L));
     }
 
 }
